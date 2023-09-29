@@ -4,16 +4,23 @@ class New extends React.Component {
   render() {
     return (
       <div>
+        <h1>Create a New Log</h1>
         <form action="/logs" method="POST">
-          Title: <input type="text" />
+          Title: <input type="text" name="title" />
           <br />
-          Entry: <input type="textarea" />
           <br />
-          Ship is broken: <input type="checkbox" />
+          Entry: <textarea name="entry"></textarea>
           <br />
-          <input type="submit" />
+          <br />
+          Is the Ship Broken?{" "}
+          <input type="checkbox" name="shipIsBroken" value="true" />
+          <br />
+          <br />
+          <input type="submit" value="Submit" />
         </form>
       </div>
     );
   }
 }
+
+module.exports = New;
